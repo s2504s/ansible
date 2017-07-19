@@ -1,0 +1,12 @@
+---
+
+- name: Install datadog Agent
+  include: install.yml
+  tags:
+    - build
+
+- name: Configure datadog Agent
+  include: configure.yml
+  when: datadog.enabled
+  tags:
+    - configure
